@@ -1,1 +1,23 @@
+name: Test Python Code
 
+on:
+  push:
+    paths:
+      - 'w1_5/main.py'
+      - 'w1_5/tests/**'
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run tests
+        run: |
+          python -m unittest discover -s w1_5/tests
