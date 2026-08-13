@@ -1,4 +1,4 @@
-print("Program starting.\n")
+#print("Program starting.\n")
 word = input("Insert a closed compound word: ")
 
 length = len(word)
